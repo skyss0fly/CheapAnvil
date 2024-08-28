@@ -6,6 +6,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\inventory\InventoryTransactionEvent;
 use pocketmine\block\inventory\AnvilInventory;
 use pocketmine\player\Player;
+use pocketmine\inventory\transaction\action\SlotChangeAction;
 
 class Main extends PluginBase implements Listener {
 
