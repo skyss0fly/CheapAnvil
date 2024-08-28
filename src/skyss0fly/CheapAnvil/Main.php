@@ -31,7 +31,6 @@ class Main extends PluginBase implements Listener {
         if ($player instanceof Player && $inventory instanceof AnvilInventory) {
             // Set the experience cost to 0
             $inventory->setRepairCost(0);
-            $player->sendMessage("The anvil repair cost has been set to 0 XP!");
         }
     }
 }
