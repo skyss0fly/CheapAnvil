@@ -7,6 +7,8 @@ use pocketmine\event\inventory\InventoryTransactionEvent;
 use pocketmine\block\inventory\AnvilInventory;
 use pocketmine\player\Player;
 use pocketmine\inventory\transaction\action\SlotChangeAction;
+use pocketmine\item\enchantment\EnchantingOption;
+
 
 class Main extends PluginBase implements Listener {
 
@@ -18,7 +20,7 @@ class Main extends PluginBase implements Listener {
     /**
      * @param InventoryTransactionEvent $event
      */
-    public function onInventoryTransaction(InventoryTransactionEvent $event): void {
+    public function onInventoryTransaction(InventoryTransactionEvent $event, EnchantingOption $option): void {
         $transaction = $event->getTransaction();
         $player = null;
         $inventory = null;
@@ -35,7 +37,7 @@ class Main extends PluginBase implements Listener {
 
         if ($player instanceof Player && $inventory instanceof AnvilInventory) {
             // Set the experience cost to 0
-            $inventory->setRepairCost(0);
+            $option->$requiredXpLevel = 0;
         }
     }
 }
