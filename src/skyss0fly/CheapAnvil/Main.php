@@ -13,7 +13,7 @@ private $option;
 
     public function onEnable(EnchantingOption $encop): void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->option = $encop:
+        $this->option = $encop;
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("CheapAnvil has been enabled and set Anvil Price to 0 xp");
     }
