@@ -5,7 +5,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\inventory\InventoryTransactionEvent;
 use pocketmine\block\inventory\AnvilInventory;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class Main extends PluginBase implements Listener {
 
