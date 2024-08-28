@@ -21,7 +21,7 @@ class Main extends PluginBase implements Listener {
         $transaction = $event->getTransaction();
         $player = null;
         foreach ($transaction->getActions() as $action) {
-            $inventory = $action->getSourceItem();
+            $inventory = $action->getInventory();
             if ($inventory instanceof AnvilInventory) {
                 $player = $transaction->getSource();
                 break;
