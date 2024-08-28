@@ -11,8 +11,10 @@ use pocketmine\item\enchantment\EnchantingOption;
 
 
 class Main extends PluginBase implements Listener {
-
+private option;
+    
     public function onEnable(): void {
+        $this->option = EnchantingOption();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("CheapAnvil has been enabled and set Anvil Price to 0 xp");
     }
@@ -20,7 +22,7 @@ class Main extends PluginBase implements Listener {
     /**
      * @param InventoryTransactionEvent $event
      */
-    public function onInventoryTransaction(InventoryTransactionEvent $event, EnchantingOption $option): void {
+    public function onInventoryTransaction(InventoryTransactionEvent $event): void {
         $transaction = $event->getTransaction();
         $player = null;
         $inventory = null;
