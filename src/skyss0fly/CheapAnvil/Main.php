@@ -20,11 +20,15 @@ class Main extends PluginBase implements Listener {
     public function onInventoryTransaction(InventoryTransactionEvent $event): void {
         $transaction = $event->getTransaction();
         $player = null;
+        $inventory = null;
+
         foreach ($transaction->getActions() as $action) {
-            $inventory = $action->getInventory();
-            if ($inventory instanceof AnvilInventory) {
-                $player = $transaction->getSource();
-                break;
+            if ($action instanceof SlotChangeAction) {
+                $inventory = $action->getInventory();
+                if ($inventory instanceof AnvilInventory) {
+                    $player = $transaction->getSource();
+                    break;
+                }
             }
         }
 
