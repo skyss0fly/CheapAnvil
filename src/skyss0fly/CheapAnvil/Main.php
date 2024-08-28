@@ -11,9 +11,9 @@ use pocketmine\item\enchantment\EnchantingOption;
 class Main extends PluginBase implements Listener{
 private $option;
 
-    public function onEnable(): void {
+    public function onEnable(EnchantingOption $encop): void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->option = new EnchantingOption();
+        $this->option = $encop:
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("CheapAnvil has been enabled and set Anvil Price to 0 xp");
     }
@@ -38,7 +38,7 @@ private $option;
 
         if ($player instanceof Player && $inventory instanceof AnvilInventory) {
             // Set the experience cost to 0
-            $option->$requiredXpLevel = 0;
+            $this->option->$requiredXpLevel = 0;
         }
     }
 }
