@@ -8,12 +8,12 @@ use pocketmine\block\inventory\AnvilInventory;
 use pocketmine\player\Player;
 use pocketmine\inventory\transaction\action\SlotChangeAction;
 use pocketmine\item\enchantment\EnchantingOption;
+class Main extends PluginBase implements Listener{
+private $option;
 
-
-class Main extends PluginBase implements Listener {
-private option;
-    
     public function onEnable(): void {
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        $this->option = new EnchantingOption();
         $this->option = EnchantingOption();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("CheapAnvil has been enabled and set Anvil Price to 0 xp");
