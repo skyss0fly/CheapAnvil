@@ -8,7 +8,7 @@ use pocketmine\block\inventory\AnvilInventory;
 use pocketmine\player\Player;
 use pocketmine\inventory\transaction\action\SlotChangeAction;
 use pocketmine\item\enchantment\EnchantingOption;
-class Main extends PluginBase implements Listener{
+class Main extends PluginBase,EnchantingOption implements Listener{
 private $option;
 
     public function onEnable(): void {
