@@ -7,7 +7,7 @@ use pocketmine\plugin\PluginBase;
 class Main extends PluginBase{
 
 public function onEnable(EnchantmentOption $enc):void {
-$enc->requiredXp = 0;
+$enc->requiredXpLevel = 0;
   $this->getLogger()->info("CheapAnvil has set Anvil Price to 0 xp");
   
   return true;
